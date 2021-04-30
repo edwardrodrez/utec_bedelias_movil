@@ -1,0 +1,7 @@
+{
+  "name": "utec",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,29 @@
+<div class="content">
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
+  <ion-label style="color: white;font-size: 2rem;padding-top: 20vh;">Iniciar Sesión</ion-label>
+ 
+    <ion-item style="padding-top: 5vh;" >
+      <ion-input [(ngModel)]="usu.email" formControlName="userEmail" type="text" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="Email"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="loginFormValidator.userEmail.empty" style="width: 100%;">
+      <ion-label text-wrap color="danger">
+      {{ loginFormValidator.userEmail.empty }}
+      </ion-label>
+      </ion-item>
+
+  
+    <ion-item style="padding-top: 5vh;" >
+
+      <ion-input type="password" [(ngModel)]="usu.pass" formControlName="userPassword" placeholder="Password"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="loginFormValidator.userPassword.empty" style="width: 100%;">
+      <ion-label text-wrap color="danger">
+      {{ loginFormValidator.userPassword.empty }}
+      </ion-label>
+    </ion-item>
+
+
+  <ion-button type="submit" style="margin-top: 5vh;"  expand="full">Ingresar</ion-button>
+</form>
+</div>

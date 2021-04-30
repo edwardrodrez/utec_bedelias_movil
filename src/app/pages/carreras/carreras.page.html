@@ -1,0 +1,65 @@
+<ion-header >
+
+  <ion-toolbar style="padding: 10px;border-bottom: 1px solid white;" color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu" style="font-size: 3rem">
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title  slot="end" style="font-weight: 900;font-family: unset;">BEDELIAS.MOVIL</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-card style="margin-top: 30px;"> 
+    <ion-card-content>
+    <ion-label style="font-size: 1rem;
+    font-weight: 700;color: tomato;">
+        Periodos de Inscripciones
+    </ion-label>
+  </ion-card-content>
+  </ion-card>
+
+    <ion-card> 
+      <ion-card-content>
+        En esta seccion podras ingresar al listado de periodos lectivos y periodos de examenes a los cuales podras inscribirte 
+        si el mismo se encuentra en periodo de isncripcion activo o si cuentas con requisitos previos.
+      </ion-card-content>
+    </ion-card>
+
+
+
+
+    <ion-card> 
+      <ion-card-content>  
+      <ion-label style="    font-size: 1rem;
+      font-weight: 700;color: tomato;">
+        Seleccione ah que desea inscribirse : 
+      </ion-label>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card> 
+    <ion-card-content>  
+      <ion-list>
+        <ion-item button (click)="openLectivos()">
+          <ion-label style="    font-weight: 700;color: dodgerblue;">Cursos</ion-label>     
+          <ion-icon name="duplicate-outline" color="primary" slot="end"></ion-icon>
+        </ion-item>  
+      </ion-list>
+  </ion-card-content>
+</ion-card>
+
+<ion-card> 
+  <ion-card-content>  
+    <ion-list> 
+        <ion-item button (click)="openExamenes()">
+          <ion-label style="font-weight: 700;color: dodgerblue;">Examenes</ion-label> 
+          <ion-icon name="duplicate-outline" color="primary" slot="end"></ion-icon>
+        </ion-item>
+    </ion-list>
+</ion-card-content>
+</ion-card>
+
+</ion-content>

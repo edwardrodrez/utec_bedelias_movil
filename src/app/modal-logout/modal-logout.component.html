@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Cerrar Sesión</ion-title>
+    <ion-buttons slot="end">
+    <ion-button (click)="dismissModal()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+
+
+  <ion-card style="margin-top: 50px;"> 
+    <ion-card-content>
+      Está seguro que desea Cerrar Sesión?
+    </ion-card-content>
+  </ion-card>
+  <ion-button expand="full" style="margin-left: 20px;margin-right: 20px;margin-top: 100px;" (click)="Logout()">Confirmar</ion-button>
+</ion-content>

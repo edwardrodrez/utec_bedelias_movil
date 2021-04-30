@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title style="color: white;">LISTADO DE EXAMENES</ion-title>
+    <ion-buttons slot="end">
+    <ion-button (click)="dismissModal()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-card> 
+    <ion-card-content>
+      Listado de exámenes que se encuentran en periodos de inscripción activos.
+    </ion-card-content>
+  </ion-card>
+
+        <ion-item *ngFor="let item of typesOfShoes; let i = index">
+      
+          <div *ngIf="item.puedo" style="width: 100%;">  
+          <ion-card > 
+            
+            <ion-card-content>
+              <ion-label style="font-size: 1rem;font-weight: 700;color: tomato;;display: flex;align-items: center;
+              justify-content: space-between;width: 100%;">Examen de {{item.curso.nombre}} <p>{{item.fechaInicial}}</p></ion-label>
+              <ion-label style="font-size: 1rem;font-weight: 500;color: steelblue">Ubicacion : {{item.sede.direccion.departamento}} </ion-label>
+              <ion-label style="font-size: 1rem;font-weight: 500;color: steelblue;display: flex;align-items: center;
+              justify-content: space-between;">Sede : {{item.sede.nombre}}
+              <ion-button slot="end" (click)="Validacion(this.item.idperiodo,this.item.curso)" [disabled]="yaEsta">INSCRIBIRME</ion-button></ion-label>
+              
+            </ion-card-content>
+          </ion-card>
+          </div>
+          <div *ngIf="!item.puedo" style="width: 100%;">  
+            <ion-card color="primary"> 
+              
+              <ion-card-content>
+                <ion-label style="font-size: 1rem;font-weight: 700;color: white;;display: flex;align-items: center;
+                justify-content: space-between;width: 100%;">Examen de {{item.curso.nombre}} <p>{{item.fechaInicial}}</p></ion-label>
+                <ion-label style="font-size: 1rem;font-weight: 500;color: white">Ubicacion : {{item.sede.direccion.departamento}} </ion-label>
+                <ion-label style="font-size: 1rem;font-weight: 500;color: white;display: flex;align-items: center;
+                justify-content: space-between;">No puede Inscribirse al Examen</ion-label>
+                  <ion-label style="font-size: 1rem;font-weight: 500;color: white;display: flex;align-items: center;
+                  justify-content: space-between;">{{item.mensaje}}</ion-label>
+              </ion-card-content>
+            </ion-card>
+            </div>
+        </ion-item>
+
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles"></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

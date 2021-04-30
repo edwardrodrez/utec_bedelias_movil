@@ -1,0 +1,49 @@
+<ion-app>
+  <ion-menu menuId="main-menu" content-id="main">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Menú</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list style="margin-top: 20px;">
+        <ion-item style="margin-right: 20px;border-bottom: 1px solid steelblue;margin-left: 20px;">
+          <ion-label style="font-weight: 700;color: chocolate;">Opciones</ion-label>
+        </ion-item>
+        <ion-menu-toggle>
+          <ion-item routerLink="/home" style="margin-right: 20px;border-bottom: 1px solid steelblue;margin-left: 20px;">
+            <ion-icon name="arrow-back-circle-outline" slot="start"></ion-icon>
+            <ion-label>Volver a Principal</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item routerLink="/carreras" style="margin-right: 20px;border-bottom: 1px solid steelblue;margin-left: 20px;">
+            <ion-icon name="grid-outline" slot="start"></ion-icon>
+            <ion-label>Inscribirse en Periodos</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item routerLink="/escolaridad" style="margin-right: 20px;border-bottom: 1px solid steelblue;margin-left: 20px;">
+            <ion-icon name="document-text-outline" slot="start"></ion-icon>
+            <ion-label>Solicitud Escolaridad</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item button (click)="openLogout()" style="margin-top: 30px; margin-right: 60px;border-bottom: 1px solid steelblue;margin-left: 60px;display: flex;align-items: center;justify-content: center;">
+            <ion-icon name="log-out-outline" slot="start"></ion-icon>
+            <ion-label>Cerrar Sesión</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+
+          <div style="height: 150px;margin-top: 30px;width: 100%;display: flex;align-items: center;justify-content: center;flex-direction: column;">
+              <ion-title  slot="end" style="font-weight: 800;font-family: unset;color: chocolate;">UTEC 2020</ion-title>
+              <img src="../assets/img/logo-utec.svg" class="App-logo" alt="logo" style="background: bottom;height: 100px;width: 100px;"/> 
+          </div>
+
+
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

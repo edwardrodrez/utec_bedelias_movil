@@ -1,0 +1,54 @@
+<ion-header >
+
+  <ion-toolbar style="padding: 10px;border-bottom: 1px solid white;" color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu" style="font-size: 3rem">
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title  slot="end" style="font-weight: 900;font-family: unset;">BEDELIAS.MOVIL</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-card style="margin-top: 30px;"> 
+    <ion-card-content>
+    <ion-label style="font-size: 1rem;
+    font-weight: 700;color: tomato;">
+      Solicitud de Escolaridad
+    </ion-label>
+  </ion-card-content>
+  </ion-card>
+  <ion-card> 
+    <ion-card-content>
+      Podrás solicitar tu escolaridad cada vez que desees, la misma se autogenerara a partir de tu estado académico actual
+      deberás seleccionar la carrera.
+    </ion-card-content>
+  </ion-card>
+  <ion-card style="margin-top: 30px;"> 
+    <ion-card-content>
+    <ion-label style="font-size: 1rem;
+    font-weight: 700;color: tomato;">
+      Seleccione la Carrera :
+    </ion-label>
+  </ion-card-content>
+  </ion-card>
+
+
+  
+    <ion-card> 
+      <ion-card-content>
+    <ion-item style="width: 100%;">
+      <ion-label style="font-size: 1rem;
+      font-weight: 600;color: steelblue;">Carreras</ion-label>
+      <ion-select [(ngModel)]="carrera.idcarrera" (ionChange)="optionsFn();" value="car"  okText="Seleccionar" cancelText="Cerrar">
+        <ion-select-option *ngFor="let car of carrerasUs"  [value]= "car.idcarrera"  >{{car.nombre}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-card-content>
+</ion-card>
+  
+
+  <ion-button expand="full" style=" margin-top: 40px;border-radius: 20px;
+  background: darkorange;" (click)="getEscolaridad()">Obtener Escolaridad</ion-button>
+</ion-content>
